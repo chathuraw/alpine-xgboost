@@ -5,7 +5,7 @@ RUN apk add --update --no-cache \
     git && \
     mkdir /src && \
     cd /src && \
-    git clone --recursive -b v0.81 https://github.com/dmlc/xgboost && \
+    git clone --recursive -b v0.90 https://github.com/dmlc/xgboost && \
     sed -i '/#define DMLC_LOG_STACK_TRACE 1/d' /src/xgboost/dmlc-core/include/dmlc/base.h && \
     sed -i '/#define DMLC_LOG_STACK_TRACE 1/d' /src/xgboost/rabit/include/dmlc/base.h && \
     apk del .build-dependencies
@@ -16,7 +16,7 @@ RUN apk add --update --no-cache \
     python3-dev \
     py-setuptools g++ && \
     apk add --no-cache openblas lapack-dev libexecinfo-dev libstdc++ libgomp && \
-    pip install numpy==1.15.4 && \
+    pip install numpy==1.16.4 && \
     pip install scipy==1.2.0 && \
     pip install pandas==0.23.4 scikit-learn==0.20.2 && \
     ln -s locale.h /usr/include/xlocale.h && \
