@@ -16,6 +16,7 @@ RUN apk add --update --no-cache \
     python3-dev \
     py-setuptools g++ && \
     apk add --no-cache openblas lapack-dev libexecinfo-dev libstdc++ libgomp && \
+    pip install cython==0.29.12 && \
     pip install numpy==1.16.4 && \
     pip install scipy==1.2.0 && \
     pip install pandas==0.24.2 scikit-learn==0.21.2 && \
